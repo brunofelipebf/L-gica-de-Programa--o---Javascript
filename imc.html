@@ -17,11 +17,12 @@
             pulaLinha();
         }
 
-        var peso = 73;
-        var altura = 1.71;
+        var peso = prompt("Peso: (ex: 70)");
+        var altura = prompt("Altura: (ex: 1.77)");
 
-        var imc = peso/(altura*altura);
-        mostra("O IMC é "+imc);
+        var imc = parseFloat(peso / (altura*altura));
+
+        mostra("O IMC é "+ imc);
     </script>
 </body>
 </html>
