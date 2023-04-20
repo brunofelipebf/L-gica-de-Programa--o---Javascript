@@ -3,7 +3,8 @@
 <script>
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
-
+    var cores = ['blue', 'red', 'green'];
+    var indexCor = 0;
     pincel.fillStyle = 'grey';
     pincel.fillRect(0, 0, 600, 400);
 
@@ -19,6 +20,16 @@
        console.log("posição do clique : " + x + ", " + y);
 
     }
+
+    function mudaCor() {
+        indexCor++;
+        if(indexCor >= cores.length){
+            indexCor = 0; 
+        }// reinicia o contador para recomeçar a ordem de cores
+        return false; // não abre menu
+    }
+
+    tela.oncontextmenu = mudaCor;
 
     tela.onclick = exibeCirculo;
 
